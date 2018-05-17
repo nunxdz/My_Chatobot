@@ -89,7 +89,7 @@
             {
                 e.preventDefault();
                 var message = $('#messageText').val();
-                $(".media-list").append('<li><div class="media-body"><div class="media"><div class="media-body">' + message + '<hr/></div></div></div></li>');
+                $(".media-list").append('<li><div class="media-body"><div class="media"><div class="media-body">You : ' + message + '<hr/></div></div></div></li>');
                 $.ajax({
                     type: "POST",
                     url: "/ask",
@@ -100,7 +100,7 @@
 
                         var answer = response.answer;
                         const chatPanel = document.getElementById("chatPanel");
-                        $(".media-list").append('<li><div class="media-body"><div class="media"><div class="media-body">' + answer + '<hr/></div></div></div></li>');
+                        $(".media-list").append('<li><div class="media-body"><div class="media"><div class="media-body">Robot : ' + answer + '<hr/></div></div></div></li>');
 			                  $(".fixed-panel").stop().animate({ scrollTop: $(".fixed-panel")[0].scrollHeight}, 1200);
 
                     },
